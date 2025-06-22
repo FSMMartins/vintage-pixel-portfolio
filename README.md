@@ -1,73 +1,142 @@
-# Welcome to your Lovable project
 
-## Project info
+# Classic Car Restoration Portfolio
 
-**URL**: https://lovable.dev/projects/88e31ea7-2732-42f1-91e1-d25ff565f30d
+A minimalist, image-focused website showcasing classic car restoration projects with Apple and Instagram-inspired design.
 
-## How can I edit this code?
+## Live Website
+Visit the live site at: [Your Domain Here]
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Responsive Gallery Grid** - Mobile-first design with masonry layout
+- **Fullscreen Modal Carousel** - Immersive project viewing experience  
+- **Multilingual Support** - English/Portuguese with language toggle
+- **Static Site** - No backend required, easy to host anywhere
+- **Project Auto-Loading** - Automatically detects and loads projects from folders
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/88e31ea7-2732-42f1-91e1-d25ff565f30d) and start prompting.
+## Adding New Projects
 
-Changes made via Lovable will be committed automatically to this repo.
+### 1. Create Project Folder
 
-**Use your preferred IDE**
+Create a new folder in `/projects/` with a descriptive name using kebab-case:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```
+/projects/
+ └── porsche-911-classic/
+     ├── 01.jpg
+     ├── 02.jpg
+     ├── 03.jpg
+     └── info.json
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 2. Folder Naming Conventions
 
-Follow these steps:
+- Use **kebab-case** (lowercase with hyphens): `porsche-911-classic`
+- Be descriptive but concise: `ferrari-250gt-berlinetta`
+- Include year if helpful: `mercedes-300sl-1955`
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 3. Image Requirements
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+**File Naming:**
+- Use sequential numbers: `01.jpg`, `02.jpg`, `03.jpg`
+- Pad with zeros for proper sorting
+- Supported formats: `.jpg`, `.jpeg`, `.png`
 
-# Step 3: Install the necessary dependencies.
-npm i
+**Image Specifications:**
+- **Minimum Resolution:** 1200px on the longest side
+- **Recommended Resolution:** 1920px on the longest side
+- **Aspect Ratio:** Any (system auto-crops for grid)
+- **File Size:** Under 2MB per image for fast loading
+- **Color Profile:** sRGB
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+**Image Order:**
+- `01.jpg` - Main hero image (appears in gallery grid)
+- `02.jpg, 03.jpg...` - Additional detail shots
+- Arrange in logical viewing order (exterior → interior → engine → details)
+
+### 4. Project Information File
+
+Create `info.json` in each project folder:
+
+```json
+{
+  "name": "Porsche 911 Classic",
+  "year": "1973",
+  "tags": ["Full Restoration", "Engine", "Interior"],
+  "description": "Complete rebuild with original performance and modern finishes. This project involved a full engine rebuild, interior restoration, and paint correction."
+}
+```
+
+**Field Guidelines:**
+- **name**: Project title (appears in gallery and modal)
+- **year**: Vehicle year or project completion year
+- **tags**: 2-4 descriptive tags (keep concise)
+- **description**: 1-2 sentences describing the restoration work
+
+### 5. Publishing New Projects
+
+After adding a project folder:
+
+1. Upload the entire project folder to `/projects/`
+2. Ensure all images and `info.json` are present
+3. The site will automatically detect and display the new project
+4. No code changes required!
+
+## Technical Setup
+
+### Development
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Building for Production
+```bash
+npm run build
+npm run preview
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Deployment
+The site is completely static and can be deployed to:
+- Netlify
+- Vercel
+- GitHub Pages
+- Any static hosting service
 
-**Use GitHub Codespaces**
+## Customization
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Colors
+The site uses a minimal black/white/grey palette defined in `tailwind.config.ts`. To customize:
+- Primary: Black (#000000)
+- Background: White (#ffffff)  
+- Accent: Grey shades
 
-## What technologies are used for this project?
+### Language Support
+Currently supports English (EN) and Portuguese (PT). To add languages:
+1. Add translations to the `translations` object in `src/pages/Index.tsx`
+2. Add language button to header
+3. Update the language state management
 
-This project is built with:
+### Content Sections
+- **Gallery**: Auto-populated from `/projects/` folders
+- **About**: Edit content in the translations object
+- **Contact**: Update contact information and map integration
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Browser Support
+- Chrome/Edge 88+
+- Firefox 85+
+- Safari 14+
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-## How can I deploy this project?
+## Performance
+- Optimized images load lazily
+- Minimal JavaScript bundle
+- CSS-only animations
+- Mobile-first responsive design
 
-Simply open [Lovable](https://lovable.dev/projects/88e31ea7-2732-42f1-91e1-d25ff565f30d) and click on Share -> Publish.
+## License
+All rights reserved. Please respect automotive photography copyrights.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+For questions or support, contact: info@classicrestoration.com
