@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 
@@ -201,8 +200,7 @@ const Index = () => {
       contactTitle: 'Get In Touch',
       phone: 'Phone: +1 (555) 123-4567',
       email: 'Email: info@classicrestoration.com',
-      address: '123 Workshop Street, Classic City, CC 12345',
-      projectsCount: 'restoration projects'
+      address: '123 Workshop Street, Classic City, CC 12345'
     },
     pt: {
       title: 'Restauração de Carros Clássicos',
@@ -214,8 +212,7 @@ const Index = () => {
       contactTitle: 'Entre em Contato',
       phone: 'Telefone: +1 (555) 123-4567',
       email: 'Email: info@classicrestoration.com',
-      address: '123 Workshop Street, Classic City, CC 12345',
-      projectsCount: 'projetos de restauração'
+      address: '123 Workshop Street, Classic City, CC 12345'
     }
   };
 
@@ -279,11 +276,6 @@ const Index = () => {
       {/* Gallery Section */}
       <section id="gallery" className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-black mb-4">Gallery</h2>
-            <p className="text-xl text-gray-600">{projects.length} {t.projectsCount}</p>
-          </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <div
@@ -299,17 +291,7 @@ const Index = () => {
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-black mb-1">{project.info.name}</h3>
-                <p className="text-gray-600 mb-2">{project.info.year}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.info.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <p className="text-gray-600">{project.info.year}</p>
               </div>
             ))}
           </div>
