@@ -84,6 +84,7 @@ After adding a project folder:
 
 ## Technical Setup
 
+
 ### Development
 ```bash
 npm install
