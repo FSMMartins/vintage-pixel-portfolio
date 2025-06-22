@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 
@@ -200,7 +201,8 @@ const Index = () => {
       contactTitle: 'Get In Touch',
       phone: 'Phone: +1 (555) 123-4567',
       email: 'Email: info@classicrestoration.com',
-      address: '123 Workshop Street, Classic City, CC 12345'
+      address: '123 Workshop Street, Classic City, CC 12345',
+      projectsIntro: 'some of our projects:'
     },
     pt: {
       title: 'Restauração de Carros Clássicos',
@@ -212,7 +214,8 @@ const Index = () => {
       contactTitle: 'Entre em Contato',
       phone: 'Telefone: +1 (555) 123-4567',
       email: 'Email: info@classicrestoration.com',
-      address: '123 Workshop Street, Classic City, CC 12345'
+      address: '123 Workshop Street, Classic City, CC 12345',
+      projectsIntro: 'alguns dos nossos projetos:'
     }
   };
 
@@ -250,7 +253,6 @@ const Index = () => {
           </div>
           <div className="flex items-center space-x-6">
             <nav className="hidden md:flex space-x-8">
-              <a href="#gallery" className="text-gray-700 hover:text-black transition-colors">Gallery</a>
               <a href="#about" className="text-gray-700 hover:text-black transition-colors">{t.about}</a>
               <a href="#contact" className="text-gray-700 hover:text-black transition-colors">{t.contact}</a>
             </nav>
@@ -276,6 +278,7 @@ const Index = () => {
       {/* Gallery Section */}
       <section id="gallery" className="py-20">
         <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-left text-2xl font-medium text-black mb-12">{t.projectsIntro}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <div
