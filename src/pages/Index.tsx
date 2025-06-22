@@ -21,7 +21,7 @@ const Index = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [language, setLanguage] = useState<'en' | 'pt'>('en');
 
-  // Mock project data (in a real implementation, this would load from /projects/ folders)
+  // Mock project data with 12 examples
   useEffect(() => {
     const mockProjects: Project[] = [
       {
@@ -76,6 +76,114 @@ const Index = () => {
         images: [
           'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
           'https://images.unsplash.com/photo-1486326658981-ed68abe5868e?w=800'
+        ]
+      },
+      {
+        id: 'mustang-fastback',
+        info: {
+          name: 'Ford Mustang Fastback',
+          year: '1967',
+          tags: ['Engine Swap', 'Performance'],
+          description: 'High-performance restoration with modern drivetrain upgrades.'
+        },
+        images: [
+          'https://images.unsplash.com/photo-1544829099-b9a0c5303bea?w=800',
+          'https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=800',
+          'https://images.unsplash.com/photo-1552519507-37e9e5fa71a8?w=800'
+        ]
+      },
+      {
+        id: 'corvette-stingray',
+        info: {
+          name: 'Chevrolet Corvette Stingray',
+          year: '1963',
+          tags: ['Split Window', 'Numbers Matching'],
+          description: 'Rare split-window Corvette restored to concours condition.'
+        },
+        images: [
+          'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800',
+          'https://images.unsplash.com/photo-1552519507-2d9e1b643748?w=800'
+        ]
+      },
+      {
+        id: 'aston-martin-db5',
+        info: {
+          name: 'Aston Martin DB5',
+          year: '1965',
+          tags: ['Luxury Restoration', 'Leather'],
+          description: 'Bond-era elegance restored with period-correct craftsmanship.'
+        },
+        images: [
+          'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800',
+          'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800',
+          'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800'
+        ]
+      },
+      {
+        id: 'bmw-2002',
+        info: {
+          name: 'BMW 2002 Turbo',
+          year: '1974',
+          tags: ['Turbo', 'European'],
+          description: 'Rare factory turbo model with complete mechanical restoration.'
+        },
+        images: [
+          'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800',
+          'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800'
+        ]
+      },
+      {
+        id: 'lamborghini-miura',
+        info: {
+          name: 'Lamborghini Miura P400',
+          year: '1969',
+          tags: ['Supercar', 'Italian'],
+          description: 'The original supercar restored to museum-quality standards.'
+        },
+        images: [
+          'https://images.unsplash.com/photo-1591768793355-74d04bb6608f?w=800',
+          'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800',
+          'https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=800'
+        ]
+      },
+      {
+        id: 'alfa-romeo-giulia',
+        info: {
+          name: 'Alfa Romeo Giulia Sprint',
+          year: '1966',
+          tags: ['Italian Classic', 'Sprint'],
+          description: 'Bertone-designed beauty with matching numbers restoration.'
+        },
+        images: [
+          'https://images.unsplash.com/photo-1486326658981-ed68abe5868e?w=800',
+          'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800'
+        ]
+      },
+      {
+        id: 'triumph-tr6',
+        info: {
+          name: 'Triumph TR6',
+          year: '1971',
+          tags: ['British Roadster', 'Convertible'],
+          description: 'Classic British roadster with comprehensive restoration and upgrade.'
+        },
+        images: [
+          'https://images.unsplash.com/photo-1544829099-b9a0c5303bea?w=800',
+          'https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=800'
+        ]
+      },
+      {
+        id: 'datsun-240z',
+        info: {
+          name: 'Datsun 240Z',
+          year: '1970',
+          tags: ['Japanese Classic', 'Sports Car'],
+          description: 'First-generation Z-car restored with modern reliability improvements.'
+        },
+        images: [
+          'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800',
+          'https://images.unsplash.com/photo-1552519507-2d9e1b643748?w=800',
+          'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800'
         ]
       }
     ];
@@ -183,7 +291,7 @@ const Index = () => {
                 className="group cursor-pointer"
                 onClick={() => openProject(project)}
               >
-                <div className="aspect-square overflow-hidden bg-gray-100 mb-4">
+                <div className="aspect-square overflow-hidden bg-gray-100 mb-4 rounded-xl">
                   <img
                     src={project.images[0]}
                     alt={project.info.name}
@@ -278,7 +386,7 @@ const Index = () => {
               <img
                 src={selectedProject.images[currentImageIndex]}
                 alt={selectedProject.info.name}
-                className="max-w-full max-h-full object-contain"
+                className="max-w-full max-h-full object-contain rounded-lg"
               />
               
               {selectedProject.images.length > 1 && (
